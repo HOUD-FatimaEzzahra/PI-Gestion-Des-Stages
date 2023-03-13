@@ -10,11 +10,6 @@ Le projet a pour objectif de développer un ERP modulaire avec une architecture 
 Le service de gestion des stages est conçu pour fonctionner comme une application autonome, mais peut également être intégré à l'ensemble de l'ERP. Il est développé avec une architecture microservices pour garantir une meilleure isolation et une évolutivité facilitée.
 
 ## Contributeurs
-
-
-
-## Used By
-
 - [HOUD Fatima-Ezzahra](https://github.com/HOUD-FatimaEzzahra)
 - [BADRE-EDDINE Manar Elhouda](https://github.com/manar13297)
 - [AIT TAARABT Hasnae](https://github.com/HASNAE-AITTAARABT)
