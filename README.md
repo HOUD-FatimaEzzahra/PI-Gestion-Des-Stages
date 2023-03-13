@@ -1,10 +1,7 @@
 
 
 # Gestion des Stages
-Ce repository contient le code source pour le service de gestion des stages, qui fait partie d'un ERP développé avec une architecture microservices.
-
-## Description
-Le projet a pour objectif de développer un ERP modulaire avec une architecture microservices pour l'ENSET. Le service de gestion des stages permettra aux étudiants de rechercher des stages, de postuler à des offres, de suivre leur candidature et de communiquer avec les entreprises. Les entreprises pourront également publier des offres de stage, gérer les candidatures et communiquer avec les étudiants.
+Ce repository contient le code source pour le service de gestion des stages, qui fait partie d'un ERP modulaire développé avec une architecture microservices pour l'ENSET. 
 
 ## Architecture
 Le service de gestion des stages est conçu pour fonctionner comme une application autonome, mais peut également être intégré à l'ensemble de l'ERP. Il est développé avec une architecture microservices pour garantir une meilleure isolation et une évolutivité facilitée.
