@@ -19,6 +19,6 @@ Le service de gestion des stages est conçu pour fonctionner comme une applicati
 - [BADRE-EDDINE Manar Elhouda](https://github.com/manar13297)
 - [AIT TAARABT Hasnae](https://github.com/HASNAE-AITTAARABT)
 - [OUAKIL Manal]()
-- [Najah Mohamed]()
+- [NAJAH Mohamed]()
 
 
