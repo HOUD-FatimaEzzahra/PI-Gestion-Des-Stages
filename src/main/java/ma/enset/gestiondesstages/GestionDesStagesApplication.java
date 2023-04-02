@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GestionDesStragesApplication {
+public class GestionDesStagesApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GestionDesStragesApplication.class, args);
+        SpringApplication.run(GestionDesStagesApplication.class, args);
     }
 
 }
