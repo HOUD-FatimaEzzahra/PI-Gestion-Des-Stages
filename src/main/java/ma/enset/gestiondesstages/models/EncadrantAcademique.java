@@ -2,14 +2,15 @@ package ma.enset.gestiondesstages.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
 @Entity
-public class EncadrantProfessionnel extends Encadrant{
-    private String service;
-    private String poste;
-    @OneToMany(mappedBy = "encadrantProfessionnel", fetch = FetchType.LAZY)
+public class EncadrantAcademique extends Encadrant{
+    @OneToMany(mappedBy = "encadrantAcademique", fetch = FetchType.LAZY)
     private List<Stage> stages;
+    @ManyToOne
+    private Departement departement;
 }

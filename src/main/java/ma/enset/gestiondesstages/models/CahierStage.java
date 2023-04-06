@@ -1,11 +1,25 @@
 package ma.enset.gestiondesstages.models;
 
-import java.util.Date;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CahierStage {
+    @Id
     private long idCahier;
     private String description;
-    private String[] taches;
-    private String[] documents;
+    private String taches;
     private Date derniereModif;
+    @OneToOne
+    private Stage stage;
+    @OneToMany(mappedBy = "cahierStage", fetch= FetchType.LAZY)
+    private List<Document> documents;
 }
