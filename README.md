@@ -15,9 +15,9 @@ Le service de gestion des stages est conçu pour fonctionner comme une applicati
 
 Chers contributeurs, pour toute contribution, veuillez suivre les étapes suivantes :
 
-1- Forkez le repository
-2- Créez une nouvelle branche pour votre fonctionnalité ou correction de bug
-3- Effectuez les modifications nécessaires dans votre branche
-4- Soumettez une pull request
+- Forkez le repository
+- Créez une nouvelle branche pour votre fonctionnalité ou correction de bug
+- Effectuez les modifications nécessaires dans votre branche
+- Soumettez une pull request
 
 
