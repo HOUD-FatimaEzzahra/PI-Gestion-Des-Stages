@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EntrepriseRepository extends JpaRepository<Entreprise,String> {
-    void deleteEntrepriseByNomEntreprise(String nomEntreprise);
-    Entreprise findEntrepriseByNomEntreprise(String nomEntreprise);
+       Entreprise findEntrepriseByNomEntreprise(String nomEntreprise);
 }

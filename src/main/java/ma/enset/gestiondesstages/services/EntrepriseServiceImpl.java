@@ -35,7 +35,7 @@ public class EntrepriseServiceImpl implements EntrepriseService{
 
     @Override
     public void deleteEntreprise(String nomEntreprise){
-        entrepriseRepository.deleteEntrepriseByNomEntreprise(nomEntreprise);
+        entrepriseRepository.deleteById(nomEntreprise);
     }
 
     @Override

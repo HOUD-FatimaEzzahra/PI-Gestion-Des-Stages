@@ -48,8 +48,7 @@ public class EntrepriseController {
     //delete
     @DeleteMapping("/deleteEntreprise/{nomEntreprise}")
     @ResponseBody
-    public String deleteEntreprise(@PathVariable("nomEntreprise") String nomEntreprise){
+    public  void deleteEntreprise(@PathVariable("nomEntreprise") String nomEntreprise){
         entrepriseService.deleteEntreprise(nomEntreprise);
-        return "Deleted Successfully";
     }
 }
