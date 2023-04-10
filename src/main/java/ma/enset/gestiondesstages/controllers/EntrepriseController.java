@@ -14,14 +14,12 @@ public class EntrepriseController {
     @Autowired
     private EntrepriseService entrepriseService;
 
-
     //create
     @PostMapping("/addEntreprise")
     @ResponseBody
     public Entreprise ajouterEntreprise(@RequestBody Entreprise entreprise){
         return entrepriseService.saveEntreprise(entreprise);
     }
-
 
     //read
     @GetMapping("/entreprises")
@@ -37,11 +35,23 @@ public class EntrepriseController {
     }
 
     //update
+    @PutMapping("/entreprises/{nomEntreprise}")
+    @ResponseBody
+    public Entreprise updateEntreprise(@PathVariable(name = "nomEntreprise") String nomEntreprise, @RequestBody Entreprise entreprise){
+        Entreprise e = entrepriseService.getEntreprise(nomEntreprise);
+        if(e != null){
+            e.setNomEntreprise(entreprise.getNomEntreprise());
+            e.setType(entreprise.getType());
+            e.setActivite(entreprise.getActivite());
+            entrepriseService.saveEntreprise(e);
+        }
+        return e;
+    }
 
     //delete
     @DeleteMapping("/deleteEntreprise/{nomEntreprise}")
     @ResponseBody
-    public void deleteEntreprise(@PathVariable("nomEntreprise")String nomEntreprise){
+    public void deleteEntreprise(@PathVariable(name = "nomEntreprise")String nomEntreprise){
         entrepriseService.deleteEntreprise(nomEntreprise);
     }
 
