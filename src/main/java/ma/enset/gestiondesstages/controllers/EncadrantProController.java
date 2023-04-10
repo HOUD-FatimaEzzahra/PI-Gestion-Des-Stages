@@ -35,7 +35,7 @@ public class EncadrantProController{
     public EncadrantProfessionnel getEncadrantPro(@PathVariable("id") String id){
         return encadrantProService.getEncadrantPro(id);
     }
-    @PutMapping("/EncadrantsPro/{id}")
+    @PutMapping("/encadrantsPro/{id}")
     @ResponseBody
     public EncadrantProfessionnel updateEncadrantPro(@RequestBody EncadrantProfessionnel encadrantProfessionnel,
                                                      @PathVariable("id") String id)

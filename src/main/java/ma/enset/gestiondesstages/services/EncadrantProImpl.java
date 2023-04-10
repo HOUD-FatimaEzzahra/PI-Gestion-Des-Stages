@@ -37,6 +37,7 @@ public class EncadrantProImpl implements EncadrantProService{
         encPro.setPoste(encadrantProfessionnel.getPoste());
         encPro.setService(encadrantProfessionnel.getService());
         encPro.setStages(encadrantProfessionnel.getStages());
+        encPro.setUserId(encadrantProfessionnel.getUserId());
         return encadrantProRepository.save(encPro);
     }
 
