@@ -1,5 +1,6 @@
 package ma.enset.gestiondesstages.controllers;
 
+import ma.enset.gestiondesstages.models.EncadrantProfessionnel;
 import ma.enset.gestiondesstages.models.Entreprise;
 import ma.enset.gestiondesstages.services.EntrepriseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,12 +38,18 @@ public class EntrepriseController {
     }
 
     //update
+    @PutMapping("/entreprises/{nomEntreprise}")
+    @ResponseBody
+    public Entreprise updateEntreprise(@RequestBody Entreprise entreprise,
+                                       @PathVariable("nomEntreprise") String nomEntreprise){
+        return entrepriseService.updateEntreprise(entreprise, nomEntreprise);
+    }
 
     //delete
     @DeleteMapping("/deleteEntreprise/{nomEntreprise}")
     @ResponseBody
-    public void deleteEntreprise(@PathVariable("nomEntreprise")String nomEntreprise){
+    public String deleteEntreprise(@PathVariable("nomEntreprise") String nomEntreprise){
         entrepriseService.deleteEntreprise(nomEntreprise);
+        return "Deleted Successfully";
     }
-
 }

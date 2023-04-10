@@ -24,7 +24,7 @@ public class EntrepriseServiceImpl implements EntrepriseService{
     }
 
     @Override
-    public Entreprise updateEntreprise(Entreprise entreprise) {
+    public Entreprise updateEntreprise(Entreprise entreprise, String nomEntreprise) {
         Entreprise entrepriseExistante = entrepriseRepository.findEntrepriseByNomEntreprise(entreprise.getNomEntreprise());
         entrepriseExistante.setType(entreprise.getType());
         entrepriseExistante.setActivite(entreprise.getActivite());

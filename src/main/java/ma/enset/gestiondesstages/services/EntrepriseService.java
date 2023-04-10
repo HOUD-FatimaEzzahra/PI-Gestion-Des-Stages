@@ -7,7 +7,7 @@ import java.util.List;
 public interface EntrepriseService {
     Entreprise saveEntreprise(Entreprise entreprise);
     Entreprise getEntreprise(String nomEntreprise);
-    Entreprise updateEntreprise(Entreprise entreprise);
+    Entreprise updateEntreprise(Entreprise entreprise, String nomEntreprise);
     void deleteEntreprise(String nomEntreprise);
     List<Entreprise> listeEntreprises();
 }
