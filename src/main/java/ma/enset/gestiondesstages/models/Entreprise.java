@@ -15,6 +15,7 @@ import java.util.Objects;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Entreprise {
     @Id
     private String nomEntreprise;
