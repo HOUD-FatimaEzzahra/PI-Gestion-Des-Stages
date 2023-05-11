@@ -13,10 +13,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CahierStage {
+public class CahierStage
+{
     @Id
     private long idCahier;
-
     @ElementCollection
     private List<String> taches;
     private Date derniereModif;
