@@ -13,4 +13,11 @@ Le service de gestion des stages est conçu pour fonctionner comme une applicati
 - [OUAKIL Manal](https://github.com/OuakilManal22)
 - [NAJAH Mohamed]()
 
+Chers contributeurs, pour toute contribution, veuillez suivre les étapes suivantes :
+
+- Forkez le repository
+- Créez une nouvelle branche pour votre fonctionnalité ou correction de bug
+- Effectuez les modifications nécessaires dans votre branche
+- Soumettez une pull request
+
 
