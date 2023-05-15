@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,11 +13,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CahierStage {
+public class CahierStage
+{
     @Id
     private long idCahier;
-    private String description;
-    private String taches;
+    @ElementCollection
+    private List<String> taches;
     private Date derniereModif;
     @OneToOne
     private Stage stage;
