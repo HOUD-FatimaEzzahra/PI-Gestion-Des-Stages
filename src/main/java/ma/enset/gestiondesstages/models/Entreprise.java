@@ -3,14 +3,16 @@ package ma.enset.gestiondesstages.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import java.util.List;
+import java.util.Objects;
 
+@Getter
+@Setter
+@ToString
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Entreprise {
@@ -19,7 +21,19 @@ public class Entreprise {
     private String type;
     private String activite;
     @OneToMany
+    @ToString.Exclude
     private List<Stage> stages;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Entreprise that = (Entreprise) o;
+        return nomEntreprise != null && Objects.equals(nomEntreprise, that.nomEntreprise);
+    }
 
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
