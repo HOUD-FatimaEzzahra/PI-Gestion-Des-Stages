@@ -45,8 +45,7 @@ public class EncadrantProController{
 
     @DeleteMapping("/deleteEncadrantPro")
     @ResponseBody
-    public void deleteEncadrantPro(@PathVariable("id") String id){
-        encadrantProService.deleteEncadrantPro(id);
+
     }
 
 
