@@ -1,15 +1,11 @@
 package ma.enset.gestiondesstages;
 
-import ma.enset.gestiondesstages.models.Etudiant;
-import ma.enset.gestiondesstages.models.Filiere;
-import ma.enset.gestiondesstages.repositories.EtudiantRepository;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.Date;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class GestionDesStagesApplication {
@@ -17,6 +13,13 @@ public class GestionDesStagesApplication {
     public static void main(String[] args) {
         SpringApplication.run(GestionDesStagesApplication.class, args);
     }
+    @Bean
+    CommandLineRunner commandLineRunner(E_AcademiqueRepository eAcademiqueRepository){
+        return args -> {
+           eAcademiqueRepository.save(new EncadrantAcademique("test","najah","najah","test",null,null));
+        };
+    }
+
 
    @Bean
     CommandLineRunner start(EtudiantRepository etudiantRepository)
