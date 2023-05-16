@@ -1,5 +1,6 @@
 package ma.enset.gestiondesstages;
 
+
 import ma.enset.gestiondesstages.models.Encadrant;
 import ma.enset.gestiondesstages.models.EncadrantAcademique;
 import ma.enset.gestiondesstages.models.EncadrantProfessionnel;
@@ -11,20 +12,33 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
 import java.util.Date;
 import java.util.UUID;
 
+
 @SpringBootApplication
 public class GestionDesStagesApplication {
-
 
     public static void main(String[] args) {
         SpringApplication.run(GestionDesStagesApplication.class, args);
     }
     @Bean
+
     CommandLineRunner start(EtudiantRepository etudiantRepository, EncadrantProRepository encadrantProRepository, EncadrantAcademiqueRepository encadrantAcademiqueRepository){
         return args -> {
+
+    CommandLineRunner commandLineRunner(E_AcademiqueRepository eAcademiqueRepository){
+        return args -> {
+           eAcademiqueRepository.save(new EncadrantAcademique("test","najah","najah","test",null,null));
+        };
+    }
+
+
+   @Bean
+    CommandLineRunner start(EtudiantRepository etudiantRepository)
+    {
+        return args ->
+        {
             Etudiant etudiant = new Etudiant();
             etudiant.setCodeApogee("19827337");
             etudiant.setCne("H130230204");
@@ -38,6 +52,7 @@ public class GestionDesStagesApplication {
             etudiant.setAdresse("OUJDA N24");
             etudiantRepository.save(etudiant);
             System.out.println(etudiant);
+
 
             EncadrantProfessionnel encadrantProfessionnel = new EncadrantProfessionnel();
             encadrantProfessionnel.setId(UUID.randomUUID().toString());
@@ -57,3 +72,10 @@ public class GestionDesStagesApplication {
         };
     }
 }
+
+        };
+    }
+}
+
+
+
