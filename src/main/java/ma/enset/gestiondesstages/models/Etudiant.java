@@ -1,9 +1,7 @@
 package ma.enset.gestiondesstages.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -11,6 +9,8 @@ import java.util.List;
 
 @Entity
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Etudiant
@@ -23,6 +23,7 @@ public class Etudiant
     private String prenom;
     private Date dateNaissance;
 
+
     public String getVille() {
         return ville;
     }
@@ -32,9 +33,11 @@ public class Etudiant
     }
 
     private String ville;
+
     private String adresse;
     private String telephone;
     private String email;
+    private String ville;
     public String userId;
     @OneToMany(mappedBy = "etudiant", fetch = FetchType.LAZY)
     private List<Stage> stages;

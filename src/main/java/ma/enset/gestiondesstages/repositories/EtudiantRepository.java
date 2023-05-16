@@ -1,6 +1,7 @@
 package ma.enset.gestiondesstages.repositories;
 
 import ma.enset.gestiondesstages.models.Etudiant;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,6 @@ import java.util.List;
 public interface EtudiantRepository extends JpaRepository<Etudiant, String>
 {
     List<Etudiant> findByVille(String city);
+
+}
 }

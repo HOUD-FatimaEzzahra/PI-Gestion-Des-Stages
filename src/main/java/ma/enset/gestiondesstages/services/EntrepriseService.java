@@ -5,9 +5,13 @@ import ma.enset.gestiondesstages.models.Entreprise;
 import java.util.List;
 
 public interface EntrepriseService {
-    Entreprise saveEntreprise(Entreprise entreprise);
-    Entreprise getEntreprise(String nomEntreprise);
-    Entreprise updateEntreprise(Entreprise entreprise, String nomEntreprise);
-    void deleteEntreprise(String nomEntreprise);
-    List<Entreprise> listeEntreprises();
+    List<Entreprise> getAllEntreprises();
+
+    Entreprise getEntrepriseByNom(String nomEntreprise);
+
+    Entreprise createEntreprise(Entreprise entreprise);
+
+    Entreprise updateEntreprise(String nomEntreprise, Entreprise entreprise);
+
+    Void deleteEntreprise(String nomEntreprise);
 }
