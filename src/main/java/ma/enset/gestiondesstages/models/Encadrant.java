@@ -2,21 +2,22 @@ package ma.enset.gestiondesstages.models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Encadrant
 {
     /*
     * L'attribut id est peut etre de type numerique
     * */
     @Id
+
     private String id;
     private String nom;
     private String prenom;

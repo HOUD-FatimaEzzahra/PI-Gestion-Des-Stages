@@ -13,5 +13,5 @@ public interface EntrepriseService {
 
     Entreprise updateEntreprise(String nomEntreprise, Entreprise entreprise);
 
-    void deleteEntreprise(String nomEntreprise);
+    Void deleteEntreprise(String nomEntreprise);
 }

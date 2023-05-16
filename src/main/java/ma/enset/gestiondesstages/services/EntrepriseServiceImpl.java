@@ -42,10 +42,11 @@ public class EntrepriseServiceImpl implements EntrepriseService {
     }
 
     @Override
-    public void deleteEntreprise(String nomEntreprise) {
+    public Void deleteEntreprise(String nomEntreprise) {
         Entreprise existingEntreprise = entrepriseRepository.findById(nomEntreprise)
                 .orElseThrow(() -> new ResourceNotFoundException("Entreprise not found with nomEntreprise: " + nomEntreprise));
         entrepriseRepository.delete(existingEntreprise);
+        return null;
     }
 }
 

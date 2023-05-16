@@ -10,39 +10,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/entreprises")
 public class EntrepriseController {
 
     @Autowired
     private EntrepriseService entrepriseService;
 
     @GetMapping("/entreprises")
-    public ResponseEntity<List<Entreprise>> getAllEntreprises() {
-        List<Entreprise> entreprises = entrepriseService.getAllEntreprises();
-        return new ResponseEntity<>(entreprises, HttpStatus.OK);
+    public List<Entreprise> getAllEntreprises() {
+        return entrepriseService.getAllEntreprises();
     }
 
     @GetMapping("/{nomEntreprise}")
-    public ResponseEntity<Entreprise> getEntrepriseByNom(@PathVariable String nomEntreprise) {
-        Entreprise entreprise = entrepriseService.getEntrepriseByNom(nomEntreprise);
-        return new ResponseEntity<>(entreprise, HttpStatus.OK);
+    public Entreprise getEntrepriseByNom(@PathVariable String nomEntreprise) {
+        return entrepriseService.getEntrepriseByNom(nomEntreprise);
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<Entreprise> createEntreprise(@RequestBody Entreprise entreprise) {
-        Entreprise createdEntreprise = entrepriseService.createEntreprise(entreprise);
-        return new ResponseEntity<>(createdEntreprise, HttpStatus.CREATED);
+    @PostMapping("/entreprise")
+    public Entreprise createEntreprise(@RequestBody Entreprise entreprise) {
+        return entrepriseService.createEntreprise(entreprise);
     }
 
-    @PutMapping("/update/{nomEntreprise}")
-    public ResponseEntity<Entreprise> updateEntreprise(@PathVariable String nomEntreprise, @RequestBody Entreprise entreprise) {
-        Entreprise updatedEntreprise = entrepriseService.updateEntreprise(nomEntreprise, entreprise);
-        return new ResponseEntity<>(updatedEntreprise, HttpStatus.OK);
+    @PutMapping("/{nomEntreprise}")
+    public Entreprise updateEntreprise(@PathVariable String nomEntreprise, @RequestBody Entreprise entreprise) {
+       Entreprise entreprise1= entrepriseService.getEntrepriseByNom(nomEntreprise);
+        if(entreprise.getType()!=null) entreprise1.setType(entreprise.getType());
+        if(entreprise.getActivite()!=null) entreprise1.setActivite(entreprise.getActivite());
+        if(entreprise.getStages()!=null) entreprise1.setStages(entreprise.getStages());
+        return entrepriseService.updateEntreprise(nomEntreprise, entreprise);
     }
 
-    @DeleteMapping("/delete/{nomEntreprise}")
-    public ResponseEntity<Void> deleteEntreprise(@PathVariable String nomEntreprise) {
-        entrepriseService.deleteEntreprise(nomEntreprise);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    @DeleteMapping("/{nomEntreprise}")
+    public Void deleteEntreprise(@PathVariable String nomEntreprise) {
+        return entrepriseService.deleteEntreprise(nomEntreprise);
     }
 }

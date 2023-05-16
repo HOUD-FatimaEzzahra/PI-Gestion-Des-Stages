@@ -1,12 +1,17 @@
 package ma.enset.gestiondesstages.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Getter
+@Setter
+@DiscriminatorValue("Professionnel")
 public class EncadrantProfessionnel extends Encadrant{
     private String service;
     private String poste;

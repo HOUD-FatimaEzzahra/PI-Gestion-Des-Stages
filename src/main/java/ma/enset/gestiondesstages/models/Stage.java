@@ -16,7 +16,7 @@ import java.util.List;
 public class Stage
 {
     @Id
-    private int idStage;
+    private Long idStage;
     private String intituleStage;
     private String descriptionStage;
     private TypeStage typeStage;
